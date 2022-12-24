@@ -1,4 +1,4 @@
-''' @file apg/api/rule_attributes.py
+''' @file apg_py/api/rule_attributes.py
 @brief Compute the rule attributes for all rules.
 '''
 from apg_py.lib import identifiers as id
@@ -85,6 +85,7 @@ class Attr():
 
 def rule_attributes(rules, rule_deps):
     '''Compute the recursive and non-recursive attributes for each rule.
+    @param rules The list of rules.
     @param rule_deps The rule dependencies previously computed
     (see @ref rule_dependencies.py)
     @returns Returns the rule attributes and any errors as a dictionary

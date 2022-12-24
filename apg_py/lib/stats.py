@@ -1,4 +1,4 @@
-''' @file apg/lib/stats.py @brief Collects parser's node statistics.'''
+''' @file apg_py/lib/stats.py @brief Collects parser's node statistics.'''
 from apg_py.lib import identifiers as id
 
 

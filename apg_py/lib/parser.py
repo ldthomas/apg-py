@@ -1,4 +1,4 @@
-''' @file apg/lib/parser.py @brief The APG parser.'''
+''' @file apg_py/lib/parser.py @brief The APG parser.'''
 
 # from pprint import pprint
 from apg_py.lib import identifiers as id
@@ -226,6 +226,8 @@ class Parser:
             of the input to parse.
         @param sub_length The length of the substring to parse
             (<=0 indicates end of input string.)
+        @param user_data Data which will be passed to the callback functions
+            strictly for user's use.
             '''
 
         # initialize

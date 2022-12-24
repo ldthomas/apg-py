@@ -1,4 +1,4 @@
-''' @file apg/api/scanner_callbacks.py
+''' @file apg_py/api/scanner_callbacks.py
     @brief All of the callback functions for the scanner parser's AST.'''
 
 from apg_py.lib import identifiers as id

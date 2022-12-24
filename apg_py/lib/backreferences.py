@@ -1,4 +1,4 @@
-''' @file apg/lib/backreferences.py
+''' @file apg_py/lib/backreferences.py
 @brief Back reference stack class
 
 Used for both universal and recursive back referencing.'''

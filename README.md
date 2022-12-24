@@ -38,7 +38,7 @@ The full documentation is in the code and in additional documentation files.
 It can be generated
 with <a href="https://www.doxygen.nl/"><b>doxygen</b></a>
 from the GitHub installation. For example, using the GitHub zip download
-and the Linux command line:
+and the Ubuntu Linux command line:
 <code>
 <pre>
 unzip apg-py-main.zip

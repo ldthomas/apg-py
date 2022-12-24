@@ -1,4 +1,4 @@
-''' @file apg/lib/trace.py @brief Displays a trace of the parse tree.
+''' @file apg_py/lib/trace.py @brief Displays a trace of the parse tree.
 The trace is a printed description of each
 parse tree node processed by the parser.
 '''
@@ -16,7 +16,7 @@ class Trace():
     '''Class for tracing and displaying the progress
     of the parser through the parse tree.
     The Trace class has a copy of the Parser class and knows how to use it.
-    Therefore, Trace and @ref Parser need to remain in sync throughout
+    Therefore, Trace and Parser need to remain in sync throughout
     development.'''
 
     def __init__(self, parser, fname=None, mode='dc', line_max=32):

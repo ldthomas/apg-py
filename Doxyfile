@@ -864,18 +864,18 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ./apg \
-                         ./apg/api \
-                         ./apg/lib \
-                         ./apg/exp \
-                         ./apg.py \
+INPUT                  = ./apg_py \
+                         ./apg_py/api \
+                         ./apg_py/lib \
+                         ./apg_py/exp \
                          ./examples/ast \
                          ./examples/basics \
                          ./examples/exp \
                          ./examples/grammar_object \
                          ./examples/ini_file \
-                         ./docs/quick_github.md docs/quick_pip.md \
-                         docs/homepage.md docs/SABNF.md
+                         ./docs
+                        #  ./docs/quick_github.md docs/quick_pip.md \
+                        #  docs/homepage.md docs/SABNF.md
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

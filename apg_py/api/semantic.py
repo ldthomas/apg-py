@@ -1,7 +1,7 @@
-''' @file apg/api/semantic.py
+''' @file apg_py/api/semantic.py
 @brief Semantic translation of the SABNF AST.
 
-The AST is computed in the syntax phase (@ref sytax.py).
+The AST is computed in the syntax phase (@ref syntax.py).
 The AST is translated to generate all rules, UDTs and opcodes.
 '''
 from apg_py.lib import identifiers as id
@@ -45,6 +45,7 @@ def remove_redundant_opcodes(rules):
 
 def check_for_removal(i, opcodes):
     '''Scan all opcodes and check for ALT, CAT and REP that can be removed.
+    @param i The opcode index of reference.
     @param opcodes The list of opcodes for a given rule.
     @returns Returns the number of remaining opcodes after removal.'''
     for j in range(i, len(opcodes)):
@@ -63,6 +64,7 @@ def check_for_removal(i, opcodes):
 def adjust_children(j, opcodes):
     '''When an opcode is removed the indecies of the ALT and CAT children
     must be corrected for the removed opcodes.
+    @param j The opcode index of reference.
     @param opcodes The list of opcodes for a particular rule.'''
     for op in opcodes:
         if(op['type'] == id.ALT or op['type'] == id.CAT):

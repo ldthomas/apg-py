@@ -1,4 +1,4 @@
-''' @file apg.py
+''' @file apg_py.py
 @brief This is the APG command line parser grammar generator.
 It takes an input SABNF grammar syntax and generates a
 grammar object suitable for use with a Python APG parser.

@@ -15,7 +15,6 @@ the split function. This function is similar to the
 JavaScript string split function
 (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 with a regex expression for the split pattern.
-From apg/exp/exp.py
 All flags except the character code flag "c" are ignored.
 If the "c" flag is set, substitute "tuple of character codes" for string.
   - if the input string is empty, the output list contains

@@ -2,7 +2,7 @@
 @brief Demonstrates using the AST for translation
  of the pattern matched results.
  Also demonstrates how to use the AST in the replace() function
- (see @ref apg/exp/exp.py.)
+ (see @ref apg_py/exp/exp.py.)
 '''
 import sys
 import os

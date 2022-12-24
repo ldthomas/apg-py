@@ -1,4 +1,4 @@
-''' @file apg/api/syntax_callbacks.py
+''' @file apg_py/api/syntax_callbacks.py
 @brief All the syntax parser's callback functions.
 '''
 from apg_py.lib import identifiers as id

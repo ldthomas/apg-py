@@ -1,4 +1,4 @@
-''' @file apg/exp/exp.py
+''' @file apg_py/exp/exp.py
 @brief ApgExp - a RegExp-like pattern matching engine.
 '''
 import sys
@@ -184,7 +184,7 @@ class ApgExp():
     def define_udts(self, callbacks):
         '''UDTs are user-written callback functions for specialized pattern matching.
         Callback functions must be defined for all UDTs in the SABNF grammar syntax.
-        @param callback A dictionary defining one or more callbacks.
+        @param callbacks A dictionary defining one or more callbacks.
         Multiple calls may be made until all UDT callback are defined.
         callbacks = {'udt1': func[[, 'udt2': func2], etc.]}
         '''

@@ -1,4 +1,4 @@
-''' @file apg/lib/utilities.py
+''' @file apg_py/lib/utilities.py
 @brief A few APG utility functions'''
 import sys
 import os
@@ -12,7 +12,7 @@ def string_to_tuple(string):
     However, many problems are defined in terms of ASCII
     or Unicode strings. This utility is a handy assist to get
     a string into the proper format for parser input.
-    @param The string to convert.
+    @param string The string to convert.
     @return A tuple of the Unicode code points
     for each of the strings's characters.
     '''
@@ -24,7 +24,7 @@ def string_to_tuple(string):
 
 def tuple_to_string(input):
     '''Converts a tuple of Unicode values to the equivalent string.
-    @param The tuple of Unicode values to convert.
+    @param input The tuple of Unicode values to convert.
     @return The converted string.
     '''
     string = ''

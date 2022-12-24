@@ -1,4 +1,4 @@
-""" @file apg/lib/identifiers.py
+""" @file apg_py/lib/identifiers.py
 @brief All of the APG numerical ids.
 """
 

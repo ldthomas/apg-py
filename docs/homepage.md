@@ -1,4 +1,4 @@
-# Python APG (from homepage.md)
+# Python APG
 
 [**Introduction**](#id_introduction)<br>
 [**GitHub Installation**](#id_installation)<br>
@@ -106,10 +106,11 @@ but none of the tests or examples that are available from the GitHub installatio
 <p>
 See this [quick start](docs/quick_pip.md) guide for building and APG parser in
 your project with the `pip` installation.
-</p> 
+</p>
+
 ### The Pattern-Matching Engine {#id_apgexp}
 
-The class [ApgExp](classapg_1_1exp_1_1exp_1_1ApgExp.html) is a regex-like pattern-matching engine which uses SABNF as the pattern-defining syntax
+The class [ApgExp](classapg__py_1_1exp_1_1exp_1_1ApgExp.html) is a regex-like pattern-matching engine which uses SABNF as the pattern-defining syntax
 and APG as the pattern-matching parser.
 While regex has a long and storied history and is heavily integrated into modern programming languages and practice,
 ApgExp offers the full pattern-matching power of APG and the reader-friendly SABNF syntax.
@@ -138,7 +139,7 @@ install [Graphviz](https://graphviz.org/) and [doxygen](https://www.doxygen.nl/i
 > cd apg-py-main<br>
 > doxygen
 The documentation home page will be `html/index.html`.
-Or view it on the [APG website](https://sabnf.com/)
+Or view it on the [APG website](https://sabnf.com/docs/python/index.html)
 </p>
 
 ### License {#id_license}

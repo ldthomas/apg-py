@@ -1,4 +1,4 @@
-''' @file apg/api/rule_dependencies.py
+''' @file apg_py/api/rule_dependencies.py
 @brief Determine which rules each rule depends on and vice versa.'''
 from apg_py.lib import identifiers as id
 from pprint import pprint
@@ -9,9 +9,10 @@ def rule_dependencies(rules, udts, rule_names, udt_names):
     recursive types for each rule.
     @param rules The rules from the syntax & semantic phases.
     @param udts The UDTs from the syntax & semantic phases.
-    @param rule_names The @ref NameList object for looking up
+    @param rule_names The NameList object (see class Api)for looking up
     rule name indexes.
-    @param udt_names The @ref NameList object for looking up UDT name indexes.
+    @param udt_names The NameList object for
+        looking up UDT name indexes.
     @returns The rule dependencies object.
     '''
 

@@ -1,4 +1,4 @@
-''' @file apg/api/syntax.py
+''' @file apg_py/api/syntax.py
 @brief Parse the SABNF grammar for syntax errors.
 
 Generate the AST for the semantic phase (@ref semantic.py)

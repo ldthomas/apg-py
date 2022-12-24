@@ -1,9 +1,9 @@
-''' @file apg/api/api.py
+''' @file apg_py/api/api.py
 @brief An API for generating grammar objects from SABNF grammars.
-@dir apg All of the APG library, generator and pattern-matching files.
-@dir apg/api The parser generator files.
-@dir apg/exp The pattern-matching files.
-@dir apg/lib The basic APG parsing library.
+@dir apg_py All of the APG library, generator and pattern-matching files.
+@dir apg_py/api The parser generator files.
+@dir apg_py/exp The pattern-matching files.
+@dir apg_py/lib The basic APG parsing library.
 '''
 from apg_py.api import sabnf_grammar
 from apg_py.lib.parser import Parser
@@ -31,7 +31,7 @@ class Grammar():
     def __init__(self, rules, udts, source):
         '''Grammar constructor.
         @param rules The generated rules list from Api.generate().
-        @param rules The generated UDT list from Api.generate().
+        @param udts The generated UDT list from Api.generate().
         @param source The original SABNF syntax source.
         '''
         self.has_bkru = False
@@ -122,8 +122,8 @@ class Api():
           - line['text_length'] - the number of characters in the line,
             not including the line end characters.
           - line['end'] - Designates the line end characters.
-            - 'CRLF' - Carriage return, line feed pair (\r\\n or 0x0D0A)
-            - 'CR' - Carriage return only (\r or 0x0D)
+            - 'CRLF' - Carriage return, line feed pair (\\r\\n or 0x0D0A)
+            - 'CR' - Carriage return only (\\r or 0x0D)
             - 'LF' - Line feed only (\\n or 0x0A)
             - '' - Empty string means no line end at all
                (possible for last line.)
@@ -374,7 +374,7 @@ class Api():
             - 'index' (default) rules are listed in the order they appear
             in the grammar
             - 'type' rules are listed by recursive type
-        @retuns Returns a string with the displayed rule attributes.
+        @returns Returns a string with the displayed rule attributes.
         '''
         if(sort != 'index'):
             sort = 'type'

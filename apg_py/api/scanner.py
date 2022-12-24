@@ -1,4 +1,4 @@
-''' @file apg/api/scanner.py
+''' @file apg_py/api/scanner.py
 @brief Scans the SABNF source for invalid characters.'''
 from apg_py.api.scanner_callbacks import scanner_line
 from apg_py.api.scanner_callbacks import scanner_last_line

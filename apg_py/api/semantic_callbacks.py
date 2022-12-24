@@ -1,4 +1,4 @@
-''' @file apg/api/semantic_callbacks.py
+''' @file apg_py/api/semantic_callbacks.py
 @brief All the semantic AST translation callback functions.
 '''
 import sys

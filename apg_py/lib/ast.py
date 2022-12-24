@@ -1,4 +1,4 @@
-''' @file apg/lib/ast.py
+''' @file apg_py/lib/ast.py
 @brief A class for creating and translating the Abstract Syntax Tree (AST).'''
 
 import copy
@@ -10,6 +10,7 @@ def inner_add_callback(nodes, name, callback):
     Records will only be kept for nodes that have a
     callback assigned to them. Called by both the original AST
     and the shallow copy of the AST passed to the pattern-matching results.
+    @param nodes The list of AST nodes.
     @param name the rule or UDT name of the node
     @param callback the callback function for this node'''
     lower = name.lower()
@@ -24,6 +25,9 @@ def inner_translate(input, nodes, records, data=None):
     translation of the saved AST node phrases.
     Called by both the original AST
     and the shallow copy of the AST passed to the pattern-matching results.
+    @param input The input string to the parser as a tuple of integers.
+    @param nodes The list of AST nodes.
+    @param records The list of AST node records.
     @param data arbitary user data to be passed to the callback functions
     '''
     i = 0
@@ -143,8 +147,8 @@ class Ast():
         Completes the matching "down" record with the information
         that was not available during the downward traversal of the node.
         @param name The rule or UDT name of the node.
-        @phrase_index Index of the first input character of the matched phrase.
-        @phrase_length The number of input characters matched.
+        @param phrase_index Index of the first input character of the matched phrase.
+        @param phrase_length The number of input characters matched.
         '''
         if(self.nodes[name]):
             # only keep records for rule/UDT names that have callback functions
