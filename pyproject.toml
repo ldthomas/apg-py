@@ -9,7 +9,7 @@ include = ["apg_py*"]
 namespaces = false
 [project]
 name = "apg_py"
-version = "1.0.1"
+version = "1.0.2"
 license = {text = "BSD 2-Clause License"}
 authors = [
   { name="Lowell Thomas", email="ldt@sabnf.com" },
