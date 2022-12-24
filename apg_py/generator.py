@@ -139,8 +139,7 @@ def main():
     if(args.version):
         # handle the version request
         text = 'Python APG version 1.0'
-        text += '\nCopyright (c) 2020 Lowell D. Thomas'
-        text += '\nhttps://sabnf.com/'
+        text += '\nCopyright (c) 2022 Lowell D. Thomas'
         print(text)
         exit()
 
