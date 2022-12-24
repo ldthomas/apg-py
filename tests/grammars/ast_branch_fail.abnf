@@ -1,0 +1,6 @@
+start = Left Right
+Left  = Alt1 / Alt2
+Alt1  = (X "abc")
+Alt2  = "xyz"
+Right = "xyz"
+X     = "xyz"

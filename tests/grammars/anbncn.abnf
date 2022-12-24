@@ -1,0 +1,10 @@
+;
+; Language L = {a**nb**nc**n|n>=1}
+; WikiPedia (https://en.wikipedia.org/wiki/Syntactic_predicate)
+;
+S = &(A !bb) 1*aa B !cc
+aa = %s"a"
+bb = %s"b"
+cc = %s"c"
+A = aa [A] bb
+B = bb [B] cc

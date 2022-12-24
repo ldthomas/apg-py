@@ -1,0 +1,13 @@
+;
+; in theory should match sub string "abc" of "xxabc 
+; as start rule should fail because of back reference
+; in look behind
+bkr-start = &&bkr-rule abc
+abc = "abc"
+bkr-rule = x \x
+x = "x"
+;
+; as start rule should match "xxabcabc"
+; parsing substring 2:0
+tls-start = tls-main abc \abc
+tls-main = &&"xx"

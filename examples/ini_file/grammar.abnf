@@ -1,0 +1,92 @@
+;
+; Ref: https://en.wikipedia.org: INI File
+;
+; comments begin with the semicolon, ";" and continue to the end of the line
+; comments may appear on valid section and value lines as well as blank lines
+; line ends may be CRLF, LF or CR
+; tabs, 0x09, may NOT occur in quoted strings
+;
+; keys may have multiple values
+;   - multiple values may be given as a comma delimited list on a single line
+;   - multiple values may be listed separately on separate lines with the same key name
+;
+; section names are optional
+;   - keys need not appear in a named section
+;
+; sections are "disjoint",
+;   - that is the keys in multiple occurrences of a section name are
+;   - simply joined together as if they appeared contiguously in a single section
+;
+; sections end at the beginning of a new section or the end of file
+;
+; section and key names are alphanumeric + underscore (must begin with alpha or underscore)
+; values that are not alphanumeric must be single or double quoted
+;
+; The grammar is designed to accept any string of ASCII characters without failure.
+; The "error productions", bad-section-line, bad-value-line, bad-blank-line are meant to accept all lines
+; that are not otherwise correct blank, section or value lines. This is so that
+; parser callback functions can recognize input errors and report or react to them
+; in an application-dependent manner.
+;
+;
+ini-file            = *(blank-line / value-line) *section
+section             = section-line *(blank-line / value-line)
+section-line        = good-section-line / bad-section-line
+good-section-line   = "[" wsp section-name wsp "]" wsp [comment] line-end
+bad-section-line    = "[" *any line-end;
+value-line          = good-value / bad-value-line
+good-value          = key-name wsp "=" wsp value-array wsp [comment] line-end
+bad-value-line      = (%d33-90 / %d92-126) *any line-end
+value-array         = value *(wsp "," wsp value)
+section-name        = alphanum
+key-name            = alphanum
+value               = number / boolean / d-quoted-string / s-quoted-string / string
+boolean             = true / false / null
+true                = "true" / "yes"
+false               = "false" / "no"
+null                = "null" / "void"
+number              = 1*digit
+string              = (%d33 / %d35-38 / %d40-43 / %d45-91 / %d93-126 / escaped) *(%d32-43 / %d45-91 / %d93-126 / escaped)
+d-quoted-string     = %d34  d-quoted-value %d34
+d-quoted-value      = 1*(%d32-33 / %d35-91 / %d93-126 / escaped)
+s-quoted-string     = %d39 s-quoted-value %d39
+s-quoted-value      = 1*(%d32-38  /  %d40-91 / %d93-126 / escaped)
+escaped             = %x5c (back-slash
+                    / double-quote
+                    / hash
+                    / single-quote
+                    / comma
+                    / colon
+                    / semicolon
+                    / equal-sign
+                    / blank
+                    / tab
+                    / line-feed
+                    / carriage-return
+                    / unicode
+                    / hexadecimal)
+back-slash          = %x5c
+double-quote        = %x22
+hash                = %x23
+single-quote        = %x27
+comma               = %x2c
+colon               = %x3a
+semicolon           = %x3b
+equal-sign          = %x3d
+blank               = %s"b"
+tab                 = %s"t"
+line-feed           = %s"n"
+carriage-return     = %s"r"
+unicode             = %s"u" 4hh
+hexadecimal         = %s"x" 2hh
+hh                  = %d48-57 / %d65-72 / %d97-104
+blank-line          = good-blank-line / bad-blank-line
+good-blank-line     = wsp [comment] line-end
+bad-blank-line      = (%d32 / %d9) wsp (%d33-58 / %d60-126) *any line-end
+line-end            = %d13.10 / %d10 / %d13
+comment             = %d59 *any
+wsp                 = *(%d32 / %d9)
+alpha               = %d65-90 / %d97-122
+alphanum            = (alpha / %d95) *(alpha / digit / %d95)
+digit               = %d48-57
+any                 = %d32-126 / %d9

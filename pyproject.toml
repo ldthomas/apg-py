@@ -1,0 +1,28 @@
+# from https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+[project.scripts]
+apg-py = "apg_py.generator:main"
+[tool.setuptools.packages.find]
+include = ["apg_py*"]
+namespaces = false
+[project]
+name = "apg_py"
+version = "0.0.8"
+license = {text = "BSD 2-Clause License"}
+authors = [
+  { name="Lowell Thomas", email="ldt@sabnf.com" },
+]
+description = "Python APG - an ABNF parser generator."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ldthomas/apg-py"
+"Bug Tracker" = "https://github.com/ldthomas/apg-py/issues"

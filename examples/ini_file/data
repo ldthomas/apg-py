@@ -1,0 +1,32 @@
+;anonymous, unnamed section
+controls = ab\r\nc\tdef\ngih\bxyz
+escaped = \\\"\#\'\,\:\;\=
+hex = \xff\xb1\xb5\u0418
+numbers = 1, 2, 3
+booleans = true, yes, false, no, null, void
+names = "Big Sam", "Jimmy Dean"
+mixed = 'single quotes', "double quotes", 100, True, FALSE, VOID, simple_string
+names = "Mary Jane", 'Sue Ann'
+numbers = 100, 101
+
+;first part of _codes_ section
+
+[_codes_] ;first part of section 1
+numbers = 1, 2, 3
+names = news, live
+
+;first part of secton MONEY
+[MONEY] ;first part of section 2
+dollars = 100, 200, 400
+cents = 21
+
+;continuation of _codes_ section
+[_codes_] ;second part of section 1
+names = "links"
+numbers = 11, 12, 13
+more_numbers = 99, 11, 22
+
+;continuation of section MONEY
+[MONEY] ;second part of section 2
+dollars = 1001, 1002
+cents = 99

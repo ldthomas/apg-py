@@ -1,0 +1,3 @@
+HTML     = "<" tag-name ">" *HTML "</" \%i%utag-name ">"
+TAG-name = alphanum
+alphanum = (%d97-122/%d65-90) *(%d97-122/%d65-90/%d48-57)

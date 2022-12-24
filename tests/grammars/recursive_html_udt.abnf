@@ -1,0 +1,3 @@
+HTML     = "<" tag-name u_digits ">" *HTML "</" \%s%rtag-name \%s%ru_digits ">"
+TAG-name = alpha
+alpha    = 1*(%d97-122/%d65-90)
