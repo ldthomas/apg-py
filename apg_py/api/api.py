@@ -4,6 +4,7 @@
 @dir apg_py/api The parser generator files.
 @dir apg_py/exp The pattern-matching files.
 @dir apg_py/lib The basic APG parsing library.
+@dir docs Documentation helper files for [doxygen](https://www.doxygen.nl/).
 '''
 from apg_py.api import sabnf_grammar
 from apg_py.lib.parser import Parser

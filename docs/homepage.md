@@ -110,7 +110,7 @@ your project with the `pip` installation.
 
 ### The Pattern-Matching Engine {#id_apgexp}
 
-The class [ApgExp](classapg__py_1_1exp_1_1exp_1_1ApgExp.html) is a regex-like pattern-matching engine which uses SABNF as the pattern-defining syntax
+The class [**ApgExp**](classapg__py_1_1exp_1_1exp_1_1ApgExp.html) is a regex-like pattern-matching engine which uses SABNF as the pattern-defining syntax
 and APG as the pattern-matching parser.
 While regex has a long and storied history and is heavily integrated into modern programming languages and practice,
 ApgExp offers the full pattern-matching power of APG and the reader-friendly SABNF syntax.
