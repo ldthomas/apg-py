@@ -236,8 +236,6 @@ class Trace():
 
     def down(self, op):
         '''For internal use only.'''
-        msg = 'state must be ACTIVE on downward transversal of node'
-        assert(self.parser.state == id.ACTIVE), msg
         if(self.parser.current_look_direction == id.LOOKAROUND_BEHIND):
             arrow = '<- '
         else:
@@ -255,29 +253,25 @@ class Trace():
         phrase = self.parser.input[
             self.parser.phrase_index:phraseEnd]
         charFormat = self.select_mode.get(self.mode, None)
-        assert(charFormat is not None), 'invalid mode found in trace down'
         ret += charFormat(phrase)
         ret += line_end
         self.file.write(ret + '\n')
 
     def up(self, op, begin_index):
         '''For internal use only.'''
-        msg = 'ACTIVE state not allowed on upward transversal of node'
         state = self.parser.state
-        assert(state != id.ACTIVE), msg
         if(self.parser.current_look_direction == id.LOOKAROUND_BEHIND):
             arrow = '<- '
             phrase_length = begin_index - self.parser.phrase_index
-            phrase_length = min(phrase_length, self.line_max)
+            display_length = min(phrase_length, self.line_max)
             phrase_index = self.parser.phrase_index
         else:
             arrow = '-> '
             phrase_length = self.parser.phrase_index - begin_index
-            phrase_length = min(phrase_length, self.line_max)
+            display_length = min(phrase_length, self.line_max)
             phrase_index = self.parser.phrase_index - phrase_length
         ret = self.indent(self.parser.tree_depth)
         stateDisplay = id.dict.get(state, None)[0]
-        assert(stateDisplay is not None), 'invalid state found in trace.up()'
         ret += '|' + stateDisplay + '|' + \
             str(phrase_length) + '|'
         fn = self.selectOp.get(op['type'])
@@ -285,11 +279,10 @@ class Trace():
         if(state == id.MATCH):
             ret += arrow
             line_end = '...' if(
-                phrase_length < phrase_length) else ''
+                display_length < phrase_length) else ''
             phrase = self.parser.input[phrase_index:
-                                       phrase_index + phrase_length]
+                                       phrase_index + display_length]
             charFormat = self.select_mode.get(self.mode, None)
-            assert(charFormat is not None), 'invalid mode found in trace down'
             ret += charFormat(phrase)
             ret += line_end
         elif(state == id.EMPTY):

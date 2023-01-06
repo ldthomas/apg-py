@@ -10,7 +10,7 @@ from pprint import pprint
 sys.path.append(os.getcwd())
 from apg_py.lib import utilities as utils
 from apg_py.lib.parser import Parser
-# from apg.lib.trace import Trace
+# from apg_py.lib.trace import Trace
 from apg_py.lib.ast import Ast
 import examples.ini_file.grammar as grammar
 import examples.ini_file.parser_callbacks as pcb
